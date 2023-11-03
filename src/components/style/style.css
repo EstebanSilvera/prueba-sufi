@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 4vw;
+    margin-top: 2.9vw;
 }
 
 .sufi {
@@ -39,7 +39,7 @@
     height: 800px;
     border: 2px solid #F0F0F0;
     margin: 0 auto;
-    margin-top: 4vw;
+    margin-top: 2.9vw;
 }
 
 .nav-desembolso {
@@ -129,7 +129,7 @@
 
 .scroll-tabla {
     width: 1277px;
-    height: 510px;
+    height: 550px;
     overflow: auto;
     appearance: none;
     scrollbar-width: thin;
@@ -154,7 +154,7 @@
     height: 80px;
     border-radius: 24px 24px 0px 0px;
     box-shadow: 0px 3px 16px #AAAAAA4D;
-    top: -2.6em;
+    top: -5em;
     left: 24em;
     display: flex;
     justify-content: space-between;
@@ -180,7 +180,7 @@
 
 .mensaje {
     position: relative;
-    top: -12.5em;
+    top: -15em;
     left: 960px;
     width: 236px;
     height: 108px;
@@ -247,3 +247,7 @@
     top:660px;
     left: 66vw;
 }
+
+.hiddenDiv {
+    display: none; 
+  }

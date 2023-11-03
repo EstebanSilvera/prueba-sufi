@@ -17,12 +17,32 @@ const salir = () => {
 }
 
 const cerrar = () => {
-    alert("precionaste")
+    let div = document.getElementById("miDiv")
+    document.getElementById("toggleButton").addEventListener("click", function () {
+        if (div.style.display === "none") {
+            div.style.display = "block";
+        } else {
+            div.style.display = "none";
+        }
+    });
 }
 
 const Desembolso = () => {
 
     const [pagination, setPagination] = useState(1)
+
+    const [tabla, setTabla] = useState([
+        { fecha: "00-00-0000 00:00:00", desembolso: '00000000', tdoc: "Cédula", documento: "0000000000", monto: "$000.000.000" },
+        { fecha: "00-00-0000 00:00:00", desembolso: '00000000', tdoc: "Cédula", documento: "0000000000", monto: "$000.000.000" },
+        { fecha: "00-00-0000 00:00:00", desembolso: '00000000', tdoc: "Cédula", documento: "0000000000", monto: "$000.000.000" },
+    ]);
+
+    const agregarCampo = () => {
+        const nuevoCampo = { fecha: "00-00-0000 00:00:00", desembolso: '00000000', tdoc: "Cédula", documento: "0000000000", monto: "$000.000.000" };
+        setTabla([...tabla, nuevoCampo]);
+      };
+
+    console.log(tabla)
 
     return (
         <div>
@@ -64,125 +84,48 @@ const Desembolso = () => {
 
                 <div className='nav-checkbox'>
 
-                    <select className='check' style={{ width: "176px", height: "56px", color: "#ABB9C7", appearance: "none" }} >
-                        <option>Tipo doc.</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <select className='check' style={{ width: "176px", height: "56px", appearance: "none", color: "#ABB9C7" }} >
+                        <option >Tipo doc.</option>
+                        <option value="1">Cedula</option>
+                        <option value="2">Pasaporte</option>
+                        <option value="3">T. Identidad</option>
                     </select>
 
-                    <input className='check' style={{ width: "272px", height: "56px", color: "#ABB9C7" }} placeholder="Número de documento" />
+                    <input className='check' style={{ width: "272px", height: "56px" }} placeholder="Número de documento" />
 
-                    <input className='check' style={{ width: "272px", height: "56px", color: "#ABB9C7" }} placeholder="Número de desembolso" />
-                    <input className='check' style={{ width: "172px", height: "56px", appearance: "none" }} placeholder="Desde" />
-                    <input className='check' style={{ width: "172px", height: "56px", appearance: "none" }} placeholder="Hasta" />
+                    <input className='check' style={{ width: "272px", height: "56px" }} placeholder="Número de desembolso" />
+                    <input className='check' style={{ width: "172px", height: "56px" }} placeholder="Desde" />
+                    <input onClick={() => agregarCampo()} className='check' style={{ width: "172px", height: "56px" }} placeholder="Hasta" />
 
                 </div>
 
                 <div className='scroll-tabla'>
 
                     <table className='mi-tabla' >
-                        <tr style={{ height: "48px", background: "#F1F6FB" }}>
-                            <th className='letras' style={{ paddingLeft: "4vw", width: "276", height: "16" }}>Fecha y hora</th>
-                            <th className='letras' style={{ width: "240", height: "16" }}>Número de desembolso</th>
-                            <th className='letras' style={{ width: "236", height: "16" }} >Tipo de documento</th>
-                            <th className='letras' style={{ width: "256", height: "16" }} >Número de documento</th>
-                            <th className='letras' style={{ paddingRight: "4vw", width: "176", height: "16" }}>Monto</th>
-                        </tr>
-                        <tr style={{ height: "48px", color: "#8E8E8E", fontSize: "14px" }}>
-                            <td style={{ paddingLeft: "4vw" }}>00-00-0000 00:00:00</td>
-                            <td>00000000</td>
-                            <td>Cédula</td>
-                            <td>0000000000</td>
-                            <td style={{ fontWeight: "bold" }}>$000.000.000</td>
-                        </tr>
-                        <tr style={{ height: "48px", color: "#8E8E8E", fontSize: "14px" }}>
-                            <td style={{ paddingLeft: "4vw" }}>00-00-0000 00:00:00</td>
-                            <td>00000000</td>
-                            <td>Cédula</td>
-                            <td>0000000000</td>
-                            <td style={{ fontWeight: "bold" }}>$000.000.000</td>
-                        </tr>
-                        <tr style={{ height: "48px", color: "#8E8E8E", fontSize: "14px" }}>
-                            <td style={{ paddingLeft: "4vw" }}>00-00-0000 00:00:00</td>
-                            <td>00000000</td>
-                            <td>Cédula</td>
-                            <td>0000000000</td>
-                            <td style={{ fontWeight: "bold" }}>$000.000.000</td>
-                        </tr>
-                        <tr style={{ height: "48px", color: "#8E8E8E", fontSize: "14px" }}>
-                            <td style={{ paddingLeft: "4vw" }}>00-00-0000 00:00:00</td>
-                            <td>00000000</td>
-                            <td>Cédula</td>
-                            <td>0000000000</td>
-                            <td style={{ fontWeight: "bold" }}>$000.000.000</td>
-                        </tr>
-                        <tr style={{ height: "48px", color: "#8E8E8E", fontSize: "14px" }}>
-                            <td style={{ paddingLeft: "4vw" }}>00-00-0000 00:00:00</td>
-                            <td>00000000</td>
-                            <td>Cédula</td>
-                            <td>0000000000</td>
-                            <td style={{ fontWeight: "bold" }}>$000.000.000</td>
-                        </tr>
-                        <tr style={{ height: "48px", color: "#8E8E8E", fontSize: "14px" }}>
-                            <td style={{ paddingLeft: "4vw" }}>00-00-0000 00:00:00</td>
-                            <td>00000000</td>
-                            <td>Cédula</td>
-                            <td>0000000000</td>
-                            <td style={{ fontWeight: "bold" }}>$000.000.000</td>
-                        </tr>
-                        <tr style={{ height: "48px", color: "#8E8E8E", fontSize: "14px" }}>
-                            <td style={{ paddingLeft: "4vw" }}>00-00-0000 00:00:00</td>
-                            <td>00000000</td>
-                            <td>Cédula</td>
-                            <td>0000000000</td>
-                            <td style={{ fontWeight: "bold" }}>$000.000.000</td>
-                        </tr>
-                        <tr style={{ height: "48px", color: "#8E8E8E", fontSize: "14px" }}>
-                            <td style={{ paddingLeft: "4vw" }}>00-00-0000 00:00:00</td>
-                            <td>00000000</td>
-                            <td>Cédula</td>
-                            <td>0000000000</td>
-                            <td style={{ fontWeight: "bold" }}>$000.000.000</td>
-                        </tr>
-                        <tr style={{ height: "48px", color: "#8E8E8E", fontSize: "14px" }}>
-                            <td style={{ paddingLeft: "4vw" }}>00-00-0000 00:00:00</td>
-                            <td>00000000</td>
-                            <td>Cédula</td>
-                            <td>0000000000</td>
-                            <td style={{ fontWeight: "bold" }}>$000.000.000</td>
-                        </tr>
-                        <tr style={{ height: "48px", color: "#8E8E8E", fontSize: "14px" }}>
-                            <td style={{ paddingLeft: "4vw" }}>00-00-0000 00:00:00</td>
-                            <td>00000000</td>
-                            <td>Cédula</td>
-                            <td>0000000000</td>
-                            <td style={{ fontWeight: "bold" }}>$000.000.000</td>
-                        </tr>
-                        <tr style={{ height: "48px", color: "#8E8E8E", fontSize: "14px" }}>
-                            <td style={{ paddingLeft: "4vw" }}>00-00-0000 00:00:00</td>
-                            <td>00000000</td>
-                            <td>Cédula</td>
-                            <td>0000000000</td>
-                            <td style={{ fontWeight: "bold" }}>$000.000.000</td>
-                        </tr>
-                        <tr style={{ height: "48px", color: "#8E8E8E", fontSize: "14px" }}>
-                            <td style={{ paddingLeft: "4vw" }}>00-00-0000 00:00:00</td>
-                            <td>00000000</td>
-                            <td>Cédula</td>
-                            <td>0000000000</td>
-                            <td style={{ fontWeight: "bold" }}>$000.000.000</td>
-                        </tr>
-                        <tr style={{ height: "48px", color: "#8E8E8E", fontSize: "14px" }}>
-                            <td style={{ paddingLeft: "4vw" }}>00-00-0000 00:00:00</td>
-                            <td>00000000</td>
-                            <td>Cédula</td>
-                            <td>0000000000</td>
-                            <td style={{ fontWeight: "bold" }}>$000.000.000</td>
-                        </tr>
+                        <thead>
+                            <tr style={{ height: "48px", background: "#F1F6FB" }}>
+                                <th className='letras' style={{ paddingLeft: "4vw", width: "276", height: "16" }}>Fecha y hora</th>
+                                <th className='letras' style={{ width: "240", height: "16" }}>Número de desembolso</th>
+                                <th className='letras' style={{ width: "236", height: "16" }} >Tipo de documento</th>
+                                <th className='letras' style={{ width: "256", height: "16" }} >Número de documento</th>
+                                <th className='letras' style={{ paddingRight: "4vw", width: "176", height: "16" }}>Monto</th>
+                            </tr>
+                        </thead>
 
-
-
+                        <tbody>
+                            {
+                                tabla.map((p) => (
+                                    <tr style={{ height: "48px", color: "#8E8E8E", fontSize: "14px" }}>
+                                        <td style={{ paddingLeft: "4vw" }}>{p.fecha}</td>
+                                        <td>{p.desembolso}</td>
+                                        <td>{p.tdoc}</td>
+                                        <td>{p.documento}</td>
+                                        <td style={{ fontWeight: "bold" }}>{p.monto}</td>
+                                    </tr>
+                                ))
+                            }
+                        </tbody>
+  
                     </table>
 
                 </div>
@@ -194,7 +137,7 @@ const Desembolso = () => {
 
                     <div className='numeroPaginacion'>
                         <div style={{ padding: "10px" }}>
-                            <MdOutlineKeyboardArrowLeft style={{ color: "#DD3542", width: "24px", height: "24px" }} />
+                            <MdOutlineKeyboardArrowLeft onClick={() => (pagination === 1) ? setPagination(1) : setPagination(pagination - 1)} style={{ color: "#DD3542", width: "24px", height: "24px" }} />
                         </div>
 
                         <div style={{ width: "48px", height: "48px", border: "1px solid #ABB9C780", borderRadius: "6px", display: "flex", justifyContent: "center", alignItems: "center" }}>
@@ -204,7 +147,7 @@ const Desembolso = () => {
                         <p style={{ fontSize: "16px", margin: "0", padding: "10px", font: "arial, Lato", color: "#414141", fontWeight: "Regular" }}>de 10</p>
 
                         <div style={{ padding: "10px" }}>
-                            <MdOutlineKeyboardArrowRight style={{ color: "#DD3542", width: "24px", height: "24px" }} />
+                            <MdOutlineKeyboardArrowRight onClick={() => (pagination === 10) ? setPagination(10) : setPagination(pagination + 1)} style={{ color: "#DD3542", width: "24px", height: "24px" }} />
                         </div>
                     </div>
 
@@ -220,19 +163,19 @@ const Desembolso = () => {
                     </div>
                 </div>
 
-                <MdOutlineKeyboardArrowDown style={{ position: "relative", top: "-40.5em", left: "13em", color: "#DD3542", width: "24px", height: "24px", pointerEvents: "none" }} />
-                <FaRegCalendarDays style={{ position: "relative", top: "-40.5em", left: "59em", color: "#DD3542", width: "24px", height: "24px", pointerEvents: "none" }} />
-                <FaRegCalendarDays style={{ position: "relative", top: "-40.5em", left: "69.6em", color: "#DD3542", width: "24px", height: "24px", pointerEvents: "none" }} />
+                <MdOutlineKeyboardArrowDown style={{ position: "relative", top: "-43em", left: "13em", color: "#DD3542", width: "24px", height: "24px", pointerEvents: "none" }} />
+                <FaRegCalendarDays style={{ position: "relative", top: "-43em", left: "59em", color: "#DD3542", width: "24px", height: "24px", pointerEvents: "none" }} />
+                <FaRegCalendarDays style={{ position: "relative", top: "-43em", left: "69.6em", color: "#DD3542", width: "24px", height: "24px", pointerEvents: "none" }} />
 
 
-                <div className='mensaje'>
+                <div id="miDiv" class="hiddenDiv" className='mensaje'>
 
-                    <p style={{fontSize:"14px", margin:"0", fontFamily:"Arial, Open Sans", color:"#413E4D", width:"180px"}}>
-                        Pedro Pérez ha hecho <br />una compra por valor de <br /> <div style={{color:"#413E4D", fontFamily:"Arial, Open Sans", fontWeight:"bold" }}>$1.800.000</div>
+                    <p style={{ fontSize: "14px", margin: "0", fontFamily: "Arial, Open Sans", color: "#413E4D", width: "180px" }}>
+                        Pedro Pérez ha hecho <br />una compra por valor de <br /> <div style={{ color: "#413E4D", fontFamily: "Arial, Open Sans", fontWeight: "bold" }}>$1.800.000</div>
                     </p>
 
-                    <div onClick={() => cerrar} style={{pointerEvents:"auto"}}>
-                        <MdCancel style={{position:"relative", color:"#DD3542", width:"24px", height:"24px", top:"-3.2em", left:"1.5em"}}/>
+                    <div onClick={() => cerrar()} id="toggleButton" style={{ pointerEvents: "auto" }}>
+                        <MdCancel style={{ position: "relative", color: "#DD3542", width: "24px", height: "24px", top: "-3.2em", left: "1.5em" }} />
                     </div>
                 </div>
 

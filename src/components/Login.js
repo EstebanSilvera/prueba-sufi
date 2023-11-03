@@ -26,7 +26,7 @@ const Login = () => {
   return (
     <div >
 
-      <div className='login' style={{backgroundImage:`url(${fondo})`, overflow:"hidden", resize:"both"}}>
+      <div className='login' style={{backgroundImage:`url(${fondo})`, overflow:"hidden"}}>
 
         <div className='form'>
 
