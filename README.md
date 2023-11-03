@@ -1,6 +1,24 @@
-# Getting Started with Create React App
+# Prueba frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Quiero hacer unas aclaraciones de como funcionan las funciones que agregue como el agregar a la tabla y el descargar por texto txt, este tipo de archivo se descarga con un formato JSON.
+
+## Descargar
+
+Al pulsar el boton descargar lo que hara el programa es descargar el contenido guardado en la variable useState el cual tiene 3 campos agregado estaticos.
+
+## Agregar datos a la tabla
+
+Al presionar en el form text de hasta que tiene el logo de fecha, lo que hara es agregar una fila la cual tiene datos estaticos tal cual como las que ya estan agregas.
+
+## Login
+
+en el login realice una entrada sencilla, la cual deja entrar si agrega un correo y una contraseña.
+
+## Experiencia de la prueba.
+
+En cuanto a mi experiencia en la realización de la presente prueba, puedo resaltar algunas dificultades como la falta de disponibilidad de tiempo debido a mi horario laboral y mis estudios, sin embargo, aunque se presentaron dificultades pude enriquecer mi conocimiento, adquirir nuevas experiencias y conocimiento que me sirvieron para culminar de manera adecuada la prueba.
+Espero que les guste y sea acorde a lo solicita, muchas gracias.
+
 
 ## Available Scripts
 

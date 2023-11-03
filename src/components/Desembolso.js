@@ -4,6 +4,7 @@ import { Button, FloatingLabel, Form } from 'react-bootstrap'
 import { FaArrowRightToBracket, FaRegCalendarDays } from 'react-icons/fa6';
 import { MdOutlineKeyboardArrowRight, MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowDown, MdCancel } from 'react-icons/md'
 import { TfiDownload } from 'react-icons/tfi'
+import { saveAs } from 'file-saver';
 
 const salir = () => {
 
@@ -40,6 +41,13 @@ const Desembolso = () => {
     const agregarCampo = () => {
         const nuevoCampo = { fecha: "00-00-0000 00:00:00", desembolso: '00000000', tdoc: "Cédula", documento: "0000000000", monto: "$000.000.000" };
         setTabla([...tabla, nuevoCampo]);
+    };
+
+
+    const descargarComoTexto = () => {
+        const contenido = JSON.stringify(tabla, null, 2);
+        const blob = new Blob([contenido], { type: 'text/plain' }); 
+        saveAs(blob, 'datos.txt');
       };
 
     console.log(tabla)
@@ -77,7 +85,7 @@ const Desembolso = () => {
                         Mis desembolsos
                     </p>
                     <TfiDownload style={{ position: "relative", width: "20px", height: "22px", color: "white", top: "0.8em", left: "25.8em", pointerEvents: "none" }} />
-                    <Button style={{ marginRight: "5vh", width: "174px", height: "48px", borderRadius: " 24px", fontFamily: "Arial, Open Sans", fontSize: "14px", fontWeight: "bold" }} variant="danger" type="submit">
+                    <Button onClick={() => descargarComoTexto()} style={{ marginRight: "5vh", width: "174px", height: "48px", borderRadius: " 24px", fontFamily: "Arial, Open Sans", fontSize: "14px", fontWeight: "bold" }} variant="danger" type="submit">
                         Descargar
                     </Button>
                 </div>
@@ -125,7 +133,7 @@ const Desembolso = () => {
                                 ))
                             }
                         </tbody>
-  
+
                     </table>
 
                 </div>
